@@ -1,16 +1,13 @@
-import {FontAwesome} from '@expo/vector-icons';
+import {FontAwesome, Fontisto} from '@expo/vector-icons';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
 import * as React from 'react';
-import {Pressable} from 'react-native';
-
-import {Fontisto} from "@expo/vector-icons";
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
+import ChatsScreen from '../screens/ChatsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import {RootTabParamList, RootTabScreenProps} from '../types';
+import {RootTabParamList} from '../types';
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -37,7 +34,7 @@ export default function MainTabNavigator() {
             }}>
             <MainTab.Screen
                 name="Camera"
-                component={TabTwoScreen}
+                component={ChatsScreen}
                 options={{
                     tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18} />,
                     tabBarLabel: () => null,
@@ -45,7 +42,7 @@ export default function MainTabNavigator() {
             />
             <MainTab.Screen
                 name="Chats"
-                component={TabTwoScreen}
+                component={ChatsScreen}
             />
             <MainTab.Screen
                 name="Status"
