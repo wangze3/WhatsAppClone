@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import {View} from '../components/Themed';
+import {RootTabScreenProps} from '../types';
 import ChatListItem from "../components/ChatListItem";
 
 import chatRooms from "../data/ChatRooms";
+import InputBox from "../components/InputBox";
 
 export default function ChatsScreen({ navigation }: RootTabScreenProps<'Chats'>) {
   return (
@@ -17,6 +16,8 @@ export default function ChatsScreen({ navigation }: RootTabScreenProps<'Chats'>)
           keyExtractor={(item) => item.id}
           style = {{width: "100%"}}
       />
+
+      <InputBox />
     </View>
   );
 }
