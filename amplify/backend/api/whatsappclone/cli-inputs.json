@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "whatsappclone",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/jywang/projects/WhatsAppClone/amplify/backend/api/whatsappclone/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authwhatsappclone5c534b76"
+    }
+  }
+}
