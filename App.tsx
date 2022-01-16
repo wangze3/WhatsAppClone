@@ -28,15 +28,11 @@ function App() {
       return randomImages[Math.floor(Math.random() * randomImages.length)];
   }
 
-
-  // run this snippet only when App is first mounted.
   useEffect(()=> {
     const fetchUser = async () => {
-      // get Authenticated user from Auth
       const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
 
       if (userInfo) {
-        // get the user from Backend with the user Id (SUB) from Auth
         const userData = await API.graphql(
             graphqlOperation(
                 getUser,
@@ -53,7 +49,7 @@ function App() {
 
         const newUser = {
             id: userInfo.attributes.sub,
-            name: userInfo.userName,
+            name: userInfo.username,
             imageUri: getRandomImage(),
             status: 'Hey, I am using WhatsApp',
         }
@@ -66,7 +62,6 @@ function App() {
         );
 
         console.log(userData)
-        // if there is no user in DB with the id, then create one
       }
     }
 

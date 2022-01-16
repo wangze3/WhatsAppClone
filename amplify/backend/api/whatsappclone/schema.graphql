@@ -1,4 +1,7 @@
-type User @model {
+type User
+@model
+@auth(rules: [{ allow: owner}])
+{
   id: ID!
   name: String!
   imageUri: String

@@ -66,6 +66,7 @@ export type User = {
   status?: string | null,
   createdAt: string,
   updatedAt: string,
+  owner?: string | null,
 };
 
 export type UpdateUserInput = {
@@ -125,6 +126,7 @@ export type CreateUserMutation = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -142,6 +144,7 @@ export type UpdateUserMutation = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -159,6 +162,7 @@ export type DeleteUserMutation = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -175,6 +179,7 @@ export type GetUserQuery = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -195,9 +200,14 @@ export type ListUsersQuery = {
       status?: string | null,
       createdAt: string,
       updatedAt: string,
+      owner?: string | null,
     } >,
     nextToken?: string | null,
   } | null,
+};
+
+export type OnCreateUserSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnCreateUserSubscription = {
@@ -209,7 +219,12 @@ export type OnCreateUserSubscription = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnUpdateUserSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnUpdateUserSubscription = {
@@ -221,7 +236,12 @@ export type OnUpdateUserSubscription = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnDeleteUserSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnDeleteUserSubscription = {
@@ -233,5 +253,6 @@ export type OnDeleteUserSubscription = {
     status?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
